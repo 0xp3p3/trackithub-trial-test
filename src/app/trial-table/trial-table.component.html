@@ -1,0 +1,39 @@
+<mat-card class="main">
+
+  <div class="header">
+    <mat-form-field appearance="outline">
+      <mat-icon style="color: #80C468;" matPrefix>search</mat-icon>
+      <mat-label style="color: #C9C9C9;">Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" style="color: #C9C9C9; border: 1px white solid;" #textInput />
+      <mat-icon matSuffix style="color: #80C468;" (click)="clearFilter(textInput);">close</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="League">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>League</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.League }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Player">  
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Player</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.Player }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PaymentDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Payment Date</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.PaymentDate }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Paid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Paid</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.Paid }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Comp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Comp.</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.Comp }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['League' ,'Player','PaymentDate','Paid' ,'Comp']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['League' ,'Player','PaymentDate','Paid' ,'Comp']"></mat-row>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+</mat-card>

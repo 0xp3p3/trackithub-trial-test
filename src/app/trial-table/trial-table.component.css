@@ -1,0 +1,42 @@
+table {
+    border-bottom: solid 1px rgb(220, 220, 220) !important;
+}
+
+mat-header-cell, mat-paginator {
+    color: rgb(184,184,184) !important;
+    height: 70px;
+}
+
+mat-paginator {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.header {
+    margin: 25px 0px 0px 20px;
+    height: 80px;
+    align-items: center;
+    display: flex;
+}
+
+.main {
+    background-color: #3E485D;
+    width: 1000px;
+    margin-top: 80px;
+}
+
+.search-input {
+    color: #C9C9C9;
+    border: 1px white solid;
+}
+
+::ng-deep .mdc-notched-outline__leading {
+    border-color: #C9C9C9 !important;
+}
+::ng-deep .mdc-notched-outline__notch {
+    border-color: #C9C9C9 !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+    border-color: #C9C9C9 !important;
+}
